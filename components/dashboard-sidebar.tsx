@@ -1,6 +1,9 @@
+'use client';
+
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -14,8 +17,11 @@ import {
   HistoryIcon,
   LayoutDashboardIcon,
   ListIcon,
+  SnowflakeIcon,
 } from 'lucide-react';
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { usePathname } from 'next/navigation';
 
 const items = [
   {
@@ -41,17 +47,22 @@ const items = [
 ];
 
 export function DashboardSidebar() {
+  const pathname = usePathname();
+
   return (
     <Sidebar>
-      <SidebarHeader className="ml-2 mt-2 font-serif text-3xl">Sejukin</SidebarHeader>
+      <SidebarHeader className="ml-2 mt-2 font-serif text-3xl flex flex-row items-center">
+        <SnowflakeIcon className="text-blue-400" size={24} />
+        <span>Sejukin</span>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>A12F Storage</SidebarGroupLabel>
+          <SidebarGroupLabel>Storage A12I</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton isActive={pathname === item.url} asChild>
                     <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -63,6 +74,15 @@ export function DashboardSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <div className="flex items-center gap-2 p-2">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>JD</AvatarFallback>
+          </Avatar>
+          <span>John Doe</span>
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }
