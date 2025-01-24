@@ -30,7 +30,7 @@ const qualityChartConfig = {
 export function RadialChartsCard() {
   return (
     <Card className="max-h-fit">
-      <CardContent className="flex p-8">
+      <CardContent className="p-8 space-y-4">
         <ChartContainer
           config={freshnessChartConfig}
           className="mx-auto aspect-square max-h-[200px]"
