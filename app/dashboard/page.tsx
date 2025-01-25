@@ -1,6 +1,7 @@
 import { ProductChart } from '@/components/overview/product-chart';
 import { RadialChartsCard } from '@/components/overview/radial-charts';
 import { TemperatureChart } from '@/components/overview/temperature-chart';
+import { BatteryChart } from '@/components/overview/battery-chart';
 
 export default function OverviewPage() {
   return (
@@ -9,6 +10,7 @@ export default function OverviewPage() {
       <TemperatureChart />
       <RadialChartsCard />
       <ProductChart />
+      <BatteryChart />
     </div>
   );
 }
