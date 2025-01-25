@@ -51,6 +51,7 @@ export const overallTrackerData = [
 
 export const storageUnitsData = [
   {
+    href: "/dashboard",
     id: "A12I",
     location: "Pasar Pondok Labu",
     temperature: "5°C",

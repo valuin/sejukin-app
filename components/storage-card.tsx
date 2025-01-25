@@ -1,8 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Thermometer, MapPin, Sun } from "lucide-react";
-import { Tracker } from "./tracker-primitive";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Thermometer, MapPin, Sun } from 'lucide-react';
+import { Tracker } from './tracker-primitive';
+import Link from 'next/link';
 
 interface StorageCardProps {
+  href?: string;
   id: string;
   location: string;
   temperature: string;
@@ -14,6 +16,7 @@ interface StorageCardProps {
 }
 
 const StorageCard: React.FC<StorageCardProps> = ({
+  href,
   id,
   location,
   temperature,
@@ -23,7 +26,9 @@ const StorageCard: React.FC<StorageCardProps> = ({
   return (
     <Card className="w-full">
       <CardHeader className="space-y-0 pb-2">
-        <CardTitle className="text-lg font-semibold font-sans">{id}</CardTitle>
+        <CardTitle className="text-lg font-semibold font-sans">
+          {href ? <Link href={href}>{id}</Link> : id}
+        </CardTitle>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
