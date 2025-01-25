@@ -232,6 +232,23 @@ export function KanbanBoard() {
     },
   };
 
+  let overlay = null;
+  if (typeof window !== "undefined") {
+    overlay = createPortal(
+      <DragOverlay>
+        {activeColumn && (
+          <BoardColumn
+            isOverlay
+            column={activeColumn}
+            tasks={tasks.filter((task) => task.columnId === activeColumn.id)}
+          />
+        )}
+        {activeTask && <TaskCard task={activeTask} isOverlay />}
+      </DragOverlay>,
+      document.body
+    );
+  }
+
   return (
     <DndContext
       accessibility={{
@@ -253,23 +270,7 @@ export function KanbanBoard() {
           ))}
         </SortableContext>
       </BoardContainer>
-
-      {"document" in window &&
-        createPortal(
-          <DragOverlay>
-            {activeColumn && (
-              <BoardColumn
-                isOverlay
-                column={activeColumn}
-                tasks={tasks.filter(
-                  (task) => task.columnId === activeColumn.id
-                )}
-              />
-            )}
-            {activeTask && <TaskCard task={activeTask} isOverlay />}
-          </DragOverlay>,
-          document.body
-        )}
+      {overlay}
     </DndContext>
   );
 

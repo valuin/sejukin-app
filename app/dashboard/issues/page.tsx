@@ -1,3 +1,4 @@
+"use client";
 import { KanbanBoard } from "@/components/issues/kanban-board";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { AlertTriangle } from "lucide-react";

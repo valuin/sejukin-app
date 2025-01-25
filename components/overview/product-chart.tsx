@@ -39,7 +39,7 @@ const chartConfig = {
     color: 'hsl(var(--chart-3))',
   },
   eggplants: {
-    label: 'Eggplants',
+    label: 'Vegetables',
     color: 'hsl(var(--chart-4))',
   },
   others: {
@@ -61,7 +61,7 @@ export function ProductChart() {
             data={chartData}
             layout="vertical"
             margin={{
-              left: 16,
+              left: 20,
             }}
           >
             <YAxis

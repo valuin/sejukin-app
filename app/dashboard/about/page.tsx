@@ -95,7 +95,7 @@ function LocationCard() {
       </CardContent>
       <CardFooter>
         <a
-          href="https://goo.gl/maps/1J2K3L4M5N6P"
+          href="https://maps.app.goo.gl/WaFP7Er3efU1PXkW8"
           className="w-full"
           target="_blank"
           rel="noreferrer"

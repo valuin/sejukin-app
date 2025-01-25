@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RiGoogleFill } from "@/components/icons";
+import { SejukinLogo } from "@/components/icons";
 import Link from "next/link";
 
 export function LoginForm({
@@ -16,7 +17,7 @@ export function LoginForm({
           href="#"
           className="flex items-center gap-2 font-serif text-4xl mb-4"
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground"></div>
+          <SejukinLogo className="w-8 h-8" />
           Sejukin
         </a>
         <h1 className="text-2xl font-bold">Login to your account</h1>
